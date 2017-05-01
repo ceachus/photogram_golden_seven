@@ -1,0 +1,21 @@
+<h1>All Photos</h1>
+
+<% @list_of_all_my_photos.each do |the_photo| %>
+
+<img src="<%= the_photo.source %>">
+<p>
+<%= the_photo.caption %>
+</p>
+<p>
+<%= time_ago_in_words (the_photo.created_at) %>
+</p>
+
+<p>
+<a href = "http://localhost:3000/photos/<%= the_photo.id %>/edit">Edit</a>
+</p>
+<p>
+<a href = "http://localhost:3000/delete_photo/<%= the_photo.id %>">Delete</a>
+</p>
+
+
+<% end %>
